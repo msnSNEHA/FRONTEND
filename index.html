@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hardware Testing Report (HTR) Number Request Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+      background-color: #f4f6f8;
+    }
+
+    h2 {
+      text-align: center;
+      color: #003366;
+    }
+
+    form {
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    .radio-group {
+      display: flex;
+      gap: 15px;
+      margin-top: 5px;
+    }
+
+    .btn-group {
+      text-align: center;
+      margin-top: 25px;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 5px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .submit-btn {
+      background-color: #007bff;
+      color: white;
+    }
+
+    .reset-btn {
+      background-color: #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Hardware Testing Report (HTR) Number Request Form</h2>
+
+  <form method="POST" action="https://your-backend-url.onrender.com/submit">
+
+    <label>Title of Your DVT Report</label>
+    <input type="text" name="title" required>
+
+    <label>Component Part # & Agile Description</label>
+    <input type="text" name="component" required>
+
+    <label>Supplier's Name & Supplier P/N</label>
+    <input type="text" name="supplier" required>
+
+    <label>Tested (710/711/511/s) & Agile Description</label>
+    <input type="text" name="tested1">
+
+    <label>Tested (750/s) & Agile Description</label>
+    <input type="text" name="tested2">
+
+    <label>Tested Model / SKU & Agile Description</label>
+    <input type="text" name="tested_model">
+
+    <label>Affected PRs or RLI for NPI Project</label>
+    <input type="text" name="pr_rli" placeholder="PR- OR RLI-">
+
+    <label>Affected Deviations / DEV/ECO/MCO</label>
+    <input type="text" name="deviations">
+
+    <label>Original Plan/Report CVS/Directory Location</label>
+    <input type="text" name="directory" placeholder="See PR OR associated ECO/MCO for qualification report">
+
+    <label>HTR Upload Location (SharePoint / Google Drive)</label>
+    <input type="url" name="upload_location">
+
+    <label>Product Type</label>
+    <select name="product_type" required>
+      <option value="">-- Select --</option>
+      <option value="Optics">Optics</option>
+      <option value="Power">Power</option>
+      <option value="Thermal">Thermal</option>
+      <option value="Other">Other</option>
+    </select>
+
+    <label>Request Priority</label>
+    <select name="priority" required>
+      <option value="">-- Select --</option>
+      <option value="Urgent">Urgent</option>
+      <option value="High">High</option>
+      <option value="Normal">Normal</option>
+      <option value="Low">Low</option>
+    </select>
+
+    <label>Is There an MCO/Deviation Impact?</label>
+    <div class="radio-group">
+      <label><input type="radio" name="mco_impact" value="Yes" required> Yes</label>
+      <label><input type="radio" name="mco_impact" value="No"> No</label>
+    </div>
+
+    <label>HTR Report Available Date (Tentative)</label>
+    <input type="date" name="htr_date" required>
+
+    <label>Additional Notes</label>
+    <textarea name="notes" rows="4"></textarea>
+
+    <label>Requestor Name</label>
+    <input type="text" name="requestor_name" required>
+
+    <label>Requestor Email</label>
+    <input type="email" name="requestor_email" required>
+
+    <div class="btn-group">
+      <button type="submit" class="submit-btn">Submit</button>
+      <button type="reset" class="reset-btn">Reset</button>
+    </div>
+  </form>
+
+</body>
+</html>
